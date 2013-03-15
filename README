@@ -1,0 +1,7 @@
+Examples Only :)
+
+first, import.php to init the key
+then encrypt.php to encrypt the array and instert into mongodb
+
+
+
