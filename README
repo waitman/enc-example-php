@@ -1,7 +1,78 @@
 Examples Only :)
 
-first, import.php to init the key
-then encrypt.php to encrypt the array and instert into mongodb
+!) first, import.php to init the key
+
+
+# php -q import.php
+array(9) {
+  ["imported"]=>
+  int(0)
+  ["unchanged"]=>
+  int(1)
+  ["newuserids"]=>
+  int(0)
+  ["newsubkeys"]=>
+  int(0)
+  ["secretimported"]=>
+  int(0)
+  ["secretunchanged"]=>
+  int(0)
+  ["newsignatures"]=>
+  int(0)
+  ["skippedkeys"]=>
+  int(0)
+  ["fingerprint"]=>
+  string(40) "4A64719E367C325BC4680A6804FFDFE6F5146A05"
+}
+
+
+
+use 'fingerprint' ... 
+
+<?php
+/* add location of pub key storage */
+putenv ('GNUPGHOME=/tmp');
+
+/* init gnupg */
+$res = gnupg_init();
+
+/* select pub key fingerprint */
+$rtv = gnupg_addencryptkey($res,'4A64719E367C325BC4680A6804FFDFE6F5146A05');
+?>
+
+
+
+@) then encrypt.php to encrypt the array and instert into mongodb
+
+
+
+ie, encrypt/decrypt
+
+# php -q encrypt.php > test.enc
+# gnupg test.enc
+
+
+
+
+Install gnupg module for php
+-----------------------------------------
+
+
+> pecl install gnupg
+
+if you receive an error, see -> https://bugs.php.net/patch-display.php?bug_id=61511&patch=gnupg-1.3.2_PHP54.patch&revision=latest
+
+> pecl download gnupg
+> tar xzvf gnupg-1.3.2.tgz
+> cd gnupg-1.3.2
+> wget -O patch.txt "https://bugs.php.net/patch-display.php?bug_id=61511&patch=gnupg-1.3.2_PHP54.patch&revision=1347037361&download=1"
+> patch < patch.txt
+> ./configure
+> make && make install
+add extension=gnupg.so to php.ini
+
+
+
 
 
 
