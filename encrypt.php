@@ -11,7 +11,7 @@ $rtv = gnupg_addencryptkey($res,'4A64719E367C325BC4680A6804FFDFE6F5146A05');
 
 
 /* example json data */
-$d = '[ { "_id" : { "$oid" : "5142c947e4b051f00cd6b40f"} , "order" : { "shipping" : { "fname" : "Raina" , "lname" : "Gustafson" , "company" : "" , "email" : "raina@swimkitten.com" , "address1" : "PO Box 7775" , "address2" : "" , "city" : "San Francisco" , "state" : "CA" , "zip" : "94120" , "phone" : "4802424325"} , "billing" : { "fname" : "Raina" , "lname" : "Gustafson" , "company" : "" , "email" : "raina@swimkitten.com" , "address1" : "PO Box 7775" , "address2" : "" , "city" : "San Francisco" , "state" : "CA" , "zip" : "94120" , "phone" : "4802424325" , "date" : "2014-01" , "billing-number" : "WJGfHpcBOvIFIhWqREGfaiCqBlhu00c40L6xpSq4glE=" , "billing-code" : "D+yJb49dk0nqAVnf3sFIGw=="}}} ]';
+$d = '[ { "_id" : { "$oid" : "5142c947e4b051f00cd6b40f"} , "order" : { "shipping" : { "fname" : "R" , "lname" : "G" , "company" : "" , "email" : "r@example.com" , "address1" : "PO Box 7777775" , "address2" : "" , "city" : "San Francisco" , "state" : "CA" , "zip" : "94120" , "phone" : "4802422424325"} , "billing" : { "fname" : "R" , "lname" : "G" , "company" : "" , "email" : "r@example.com" , "address1" : "PO Box 7777775" , "address2" : "" , "city" : "San Francisco" , "state" : "CA" , "zip" : "94120" , "phone" : "4802424335" , "date" : "2014-01" , "billing-number" : "WJGfHpcBOvIFIhWqREGfaiCqBlhu00c40L6xpSq4glE=" , "billing-code" : "D+yJb49dk0nqAVnf3sFIGw=="}}} ]';
 $r = json_decode($d,true);
 
 
